@@ -559,6 +559,22 @@
     .decodle-wordmark .g-l  { color: #4169E1; } /* L  — royal blue */
     .decodle-wordmark .g-e2 { color: #00CED1; } /* E  — teal */
 
+    /* When the wordmark is wrapped in an anchor, strip default link styling
+       (underline, color override) and add a gentle hover lift so it still
+       reads as interactive. */
+    a.decodle-wordmark,
+    a .decodle-wordmark {
+      text-decoration: none;
+      cursor: pointer;
+      transition: transform 0.2s ease, filter 0.2s ease;
+      display: inline-block;
+    }
+    a.decodle-wordmark:hover,
+    a:hover .decodle-wordmark {
+      transform: translateY(-1px);
+      filter: brightness(1.08) saturate(1.05);
+    }
+
     /* Large variant on the portfolio-card title */
     .card-title.decodle-wordmark {
       font-size: 2.6rem;
@@ -982,6 +998,10 @@
       transition: color 0.2s;
     }
     .footer-social a:hover { color: var(--gold); }
+    .footer-social a.footer-decodle-link {
+      color: var(--gold);
+    }
+    .footer-social a.footer-decodle-link:hover { color: var(--gold-light); }
     .footer-social span { color: var(--border); }
 
     @keyframes fadeUp {
@@ -1100,7 +1120,7 @@
           Our work sits at the intersection of accessible design and mechanical depth. We build games that are easy to pick up, difficult to put down, and rewarding to master.
         </p>
         <p>
-          Our debut title, <span class="decodle-wordmark inline" aria-label="DEcoDLE"><span class="g-d1">D</span><span class="g-e1">E</span><span class="g-c">c</span><span class="g-o">o</span><span class="g-d2">D</span><span class="g-l">L</span><span class="g-e2">E</span></span>, is a rhythm-driven word puzzle game built around an original mechanic — the <em style="color: var(--gold-light);">Acoustic Cypher</em> — now available on the App Store and Google Play.
+          Our debut title, <a href="https://decodle.app" target="_blank" rel="noopener" aria-label="Visit DEcoDLE.app"><span class="decodle-wordmark inline" aria-hidden="true"><span class="g-d1">D</span><span class="g-e1">E</span><span class="g-c">c</span><span class="g-o">o</span><span class="g-d2">D</span><span class="g-l">L</span><span class="g-e2">E</span></span></a>, is a rhythm-driven word puzzle game built around an original mechanic — the <em style="color: var(--gold-light);">Acoustic Cypher</em> — now available on the App Store and Google Play.
         </p>
       </div>
     </div>
@@ -1155,8 +1175,10 @@
           <span class="card-tag">Mobile · Word Puzzle</span>
           <span class="card-status active">Available Now</span>
         </div>
-        <h3 class="card-title decodle-wordmark" aria-label="DEcoDLE">
-          <span class="g-d1">D</span><span class="g-e1">E</span><span class="g-c">c</span><span class="g-o">o</span><span class="g-d2">D</span><span class="g-l">L</span><span class="g-e2">E</span>
+        <h3 class="card-title decodle-wordmark" aria-label="DEcoDLE — visit the game's website">
+          <a href="https://decodle.app" target="_blank" rel="noopener" style="text-decoration: none; color: inherit; display: inline-block;">
+            <span class="g-d1">D</span><span class="g-e1">E</span><span class="g-c">c</span><span class="g-o">o</span><span class="g-d2">D</span><span class="g-l">L</span><span class="g-e2">E</span>
+          </a>
         </h3>
         <p class="card-subtitle">Debut Title · Daily Puzzle · Acoustic Cypher</p>
         <p class="card-desc">
@@ -1298,6 +1320,12 @@
           </span>
         </div>
         <div class="contact-row">
+          <span class="contact-row-label">DEcoDLE Website</span>
+          <span class="contact-row-value">
+            <a href="https://decodle.app" target="_blank" rel="noopener">decodle.app&nbsp;↗</a>
+          </span>
+        </div>
+        <div class="contact-row">
           <span class="contact-row-label">Follow DEcoDLE</span>
           <span class="contact-row-value social-row">
             <a href="https://x.com/DEcoDLE_app" target="_blank" rel="noopener">X&nbsp;·&nbsp;@DEcoDLE_app</a>
@@ -1320,6 +1348,8 @@
     <div class="footer-logo">Ad Astra Vanguard Studios</div>
     <div class="footer-tagline">To the stars, and beyond.</div>
     <div class="footer-social">
+      <a href="https://decodle.app" target="_blank" rel="noopener" class="footer-decodle-link">DEcoDLE.app&nbsp;↗</a>
+      <span aria-hidden="true">·</span>
       <a href="https://x.com/DEcoDLE_app" target="_blank" rel="noopener">X @DEcoDLE_app</a>
       <span aria-hidden="true">·</span>
       <a href="https://instagram.com/decodle.app" target="_blank" rel="noopener">IG @decodle.app</a>
